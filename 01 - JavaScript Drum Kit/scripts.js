@@ -1,5 +1,3 @@
-let keyValue = 0;
-
 window.addEventListener("keydown", function(e) {
   //Get key code data
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
@@ -16,7 +14,9 @@ window.addEventListener("keydown", function(e) {
 });
 
 function removeTransition(e) {
-  keyValue.classList.remove("playing");
+  if (e.propertyName !== "transform") return;
+
+  this.classList.remove("playing");
 }
 
 const keys = document.querySelectorAll(".key");
