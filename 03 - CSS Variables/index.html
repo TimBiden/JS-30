@@ -30,7 +30,14 @@
       --blur: 10px;
     }
 
-
+    /*
+      Connect variables to the image
+    */
+    img {
+      padding: var(--spacing);
+      background: var(--base);
+      filter: blur(var(--blur));
+    }
 
     /*
       misc styles, nothing to do with CSS variables
